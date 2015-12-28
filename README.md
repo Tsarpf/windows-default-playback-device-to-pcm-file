@@ -8,3 +8,4 @@ Can be used to record any audio that is currently playing.
 - Only tested once on my computer.
 - Made in C++ using WASAPI
 - Mostly for my personal use in live audio visualization
+- Writes to a while named test.pcm
