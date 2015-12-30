@@ -3,9 +3,7 @@
 #include <mmdeviceapi.h>
 #include <Audioclient.h>
 #include <audiopolicy.h>
-#include "AudioSink.h"
-
-HRESULT RecordAudioStream(AudioSink *pMySink);
+#include "IAudioSink.h"
 
 class AudioListener
 {
@@ -35,5 +33,5 @@ private:
 public:
 	AudioListener(int BitsPerSample, int FormatTag, int BlockAlign, int XSize);
 	~AudioListener();
-	HRESULT RecordAudioStream(AudioSink* sink);
+	HRESULT RecordAudioStream(IAudioSink*);
 };

@@ -15,21 +15,24 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AudioSink.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="AudioListener.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FileWriteSink.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AudioSink.h">
+    <ClInclude Include="AudioListener.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AudioListener.h">
+    <ClInclude Include="IAudioSink.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FileWriteSink.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

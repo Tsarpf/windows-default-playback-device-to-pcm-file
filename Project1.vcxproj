@@ -110,13 +110,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AudioSink.cpp" />
+    <ClCompile Include="FileWriteSink.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="AudioListener.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AudioSink.h" />
+    <ClInclude Include="FileWriteSink.h" />
     <ClInclude Include="AudioListener.h" />
+    <ClInclude Include="IAudioSink.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

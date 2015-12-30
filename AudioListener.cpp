@@ -9,7 +9,6 @@
 #include <mmdeviceapi.h>
 #include <Audioclient.h>
 #include <audiopolicy.h>
-#include "AudioSink.h"
 #include "AudioListener.h"
 #include <mmreg.h>
 
@@ -77,7 +76,7 @@ AudioListener::~AudioListener()
 	SAFE_RELEASE(m_pAudioClient)
 	SAFE_RELEASE(m_pCaptureClient)
 }
-HRESULT AudioListener::RecordAudioStream(AudioSink* Sink)
+HRESULT AudioListener::RecordAudioStream(IAudioSink* Sink)
 {
 	HRESULT hr;
 	BOOL bDone = FALSE;
@@ -85,10 +84,6 @@ HRESULT AudioListener::RecordAudioStream(AudioSink* Sink)
 	DWORD flags;
 	UINT32 packetLength = 0;
 	UINT32 numFramesAvailable;
-
-	// Notify the audio sink which format to use.
-	hr = Sink->SetFormat(m_pwfx);
-	if (hr) throw hr;
 
 	hr = m_pAudioClient->Start();  // Start recording.
 	if (hr) throw hr;
@@ -118,7 +113,7 @@ HRESULT AudioListener::RecordAudioStream(AudioSink* Sink)
 
 			// Copy the available capture data to the audio sink.
 			hr = Sink->CopyData(
-				pData, numFramesAvailable, &bDone);
+				pData, numFramesAvailable);
 			if (hr) throw hr;
 
 			hr = m_pCaptureClient->ReleaseBuffer(numFramesAvailable);

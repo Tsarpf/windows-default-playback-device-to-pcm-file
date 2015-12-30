@@ -1,9 +1,12 @@
 #include "AudioListener.h"
-#include "AudioSink.h"
+#include "FileWriteSink.h"
+#include "IAudioSink.h"
 int main()
 {
 	CoInitialize(nullptr);
-	AudioListener listener(16, WAVE_FORMAT_PCM, 4, 0);
-	AudioSink sink;
+	int bitDepth = 16;
+	int channels = 2;
+	AudioListener listener(bitDepth, WAVE_FORMAT_PCM, 4, 0);
+	FileWriteSink sink(channels, bitDepth);
 	listener.RecordAudioStream(&sink);
 }
