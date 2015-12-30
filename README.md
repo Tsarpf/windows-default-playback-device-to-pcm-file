@@ -4,7 +4,7 @@ Writes any and all audio coming to the currently selected Windows default audio 
 
 Can be used to record any audio that is currently playing.
 
-- Most important piece of the code, the listener, copied from here https://msdn.microsoft.com/en-us/library/windows/desktop/dd370800(v=vs.85).aspx
+- AudioListener is a cleaned up version of https://msdn.microsoft.com/en-us/library/windows/desktop/dd370800(v=vs.85).aspx
 - Only works on Windows (obviously)
 - Only tested once on my computer.
 - Made in C++ using WASAPI
