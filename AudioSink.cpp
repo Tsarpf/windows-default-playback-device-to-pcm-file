@@ -25,7 +25,6 @@ HRESULT AudioSink::SetFormat(WAVEFORMATEX* format)
 	return notImpl;
 }
 
-//pData, numFramesAvailable, &bDone);
 HRESULT AudioSink::CopyData(const BYTE* pData, const UINT32 numFramesAvailable, BOOL* bDone)
 {
 	int bytesPerSample = m_bitsPerSample / 8;
