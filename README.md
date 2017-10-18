@@ -8,4 +8,4 @@ A blog post with some extra insight: http://rabid.prototyping.xyz/2015/12/29/pro
 - Only tested once on my computer.
 - Made in C++ using WASAPI
 - Mostly for my personal use in live audio visualization
-- Writes to a while named test.pcm
+- Writes to a file named test.pcm
